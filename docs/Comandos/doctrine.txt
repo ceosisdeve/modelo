@@ -1,0 +1,6 @@
+Verifica se o banco esta igualmente configuraçao com as entidades
+vendor/bin/doctrine-module orm:schema-tool:update --dump-sql
+
+
+Comando para Atualizaar o banco deacordo com as entidades
+vendor/bin/doctrine-module orm:schema-tool:update --force
