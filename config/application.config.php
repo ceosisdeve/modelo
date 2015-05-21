@@ -13,6 +13,7 @@ return array(
         'ZfcUser',
         //'ZfcRbac',
         'ZfcUserDoctrineORM',
+        'ScnSocialAuth',
         'AssetManager',
         'ZendDeveloperTools',
         'BjyProfiler',

@@ -103,7 +103,7 @@ return array(
             ),
         ),
     ),
-    // Configuração dos Menus
+    // Configuração dos Menus do Site
     'navigation' => array(
         'default' => array(
             array(
