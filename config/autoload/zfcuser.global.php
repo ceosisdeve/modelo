@@ -3,7 +3,7 @@ $settings = array(
     //'zend_db_adapter' => 'Zend\Db\Adapter\Adapter',
     'user_entity_class' => 'Admin\Entity\Usuarios',
     'enable_default_entities' => false,
-    'enable_registration' => false,
+    'enable_registration' => true,
     'enable_username' => false,
     'auth_adapters' => array( 100 => 'ZfcUser\Authentication\Adapter\Db' ),
     'enable_display_name' => true,
@@ -16,7 +16,8 @@ $settings = array(
     'logout_redirect_route' => 'home',
     'password_cost' => 14,
     'enable_user_state' => false,
-    'table_name' => 'user',
+    'table_name' => 'usuarios',
+    'use_registration_form_captcha' => true,
 );
 
 return array(

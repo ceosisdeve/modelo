@@ -1,6 +1,14 @@
 <?php
+
 return array(
     'doctrine' => array(
+        'eventmanager' => array(
+            'orm_default' => array(
+                'subscribers' => array(
+                    'LosLog\Log\EntityLogger'
+                )
+            )
+        ),
         'configuration' => array(
             'orm_default' => array(
                 'query_cache' => 'array',

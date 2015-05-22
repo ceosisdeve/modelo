@@ -255,7 +255,7 @@ class Usuarios extends AbstractEntity implements ZfcUserInterface, IdentityInter
      */
     public function setDisplayName($displayName)
     {
-        return $this->getNome();
+        $this->displayName = $displayName;
     }
 
     /**

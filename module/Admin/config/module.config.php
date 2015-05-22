@@ -17,7 +17,7 @@ namespace Admin;
     // Configurações de Rotas
     'router' => array(
         'routes' => array(
-            'admin-home' => array(
+            'dashboard' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/app-admin',
@@ -39,12 +39,24 @@ namespace Admin;
                     ),
                 ),
             ),
+            'admin-auth' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'=>'/app-admin/auth',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Admin\Controller',
+                        'controller' => 'Auth',
+                        'action' => 'index'
+                    )
+                ),
+            ),
         ),
     ),
     // Configurações de Controlleres
     'controllers' => array(
         'invokables' => array(
             'Admin\Controller\Index' => 'Admin\Controller\IndexController',
+            'Admin\Controller\Auth' => 'Admin\Controller\AuthController',
         ),
     ),
     // Configuração dos Menus no Module Admin
@@ -101,18 +113,79 @@ namespace Admin;
         ),
     ),
     // Configuração dos Menus
-    'navigation' => array(
-        'admin' => array(
-            array(
-                'label' => 'Home',
+    'navigation' => [
+        'admin' => [
+            [
+                'label' => 'Administrador',
                 'route' => 'admin-home',
-            ),
-            'Cadastros' => array(
-                'label' => 'Administração',
-                'uri' => '#',
+                'action' => 'index',
 
-            ),
-        ),
-    ),
+            ],
+            [
+                'label' => 'Administrador',
+                'route' => 'admin-home',
+                'action' => 'index',
+
+            ],
+
+
+            /*[
+                'label' => 'Produtos',
+                'route' => 'admin-produtos',
+                'pages' => [
+                    [
+                        'label' => 'Grupo de Produtos',
+                        'route' => 'admin-grupos',
+                        'action' => 'index',
+                    ],
+                    [
+                        'label' => 'Produtos',
+                        'route' => 'admin-produtos',
+                        'action' => 'index',
+                    ],
+                    [
+                        'label' => 'Mudar Valor Por Grupo',
+                        'route' => 'admin-proPreGrupo',
+                        'action' => 'grupo',
+                    ],
+                    [
+                        'label' => 'Mudar Valor Por Cliente',
+                        'route' => 'admin-proPreCliente',
+                        'action' => 'cliente',
+                    ],
+                    [
+                        'label' => 'Mudar Valor Por Produto',
+                        'route' => 'admin-proPreProduto',
+                        'action' => 'produtos',
+                    ],
+                ]
+            ],
+
+        ],
+        'default' => [
+            [
+                'label' => 'Home',
+                'route' => 'admin-admin',
+                'action' => 'index',
+
+            ],
+            /*[
+                'label' => 'Produtos',
+                'route' => 'produto',
+                'pages' => [
+                    [
+                        'label' => 'Listar',
+                        'route' => 'produto/list',
+                        'action' => 'list',
+                    ],
+                    [
+                        'label' => 'Novo',
+                        'route' => 'produto/new',
+                        'action' => 'new',
+                    ],
+                ]
+            ],*/
+        ]
+    ],
 
 );

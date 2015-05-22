@@ -79,6 +79,9 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
+    ),//Configurando qual Layout vai ser o padrão mo modelo
+    'module_layout' => array(
+        'Application' => 'layout/layout_application.phtml'
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
@@ -87,10 +90,10 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'layout/layout'           => __DIR__ . '/../view/layout/layout_application.phtml',
             'error/404'               => __DIR__ . '/../../Base/view/error/404.phtml',
             'error/index'             => __DIR__ . '/../../Base/view/error/index.phtml',
+            'partials/paginator'      => __DIR__ . '/../../Base/view/partials/paginator.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
